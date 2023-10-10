@@ -2,7 +2,6 @@ from multiprocessing import Pool, TimeoutError, freeze_support
 import time
 import os
 import subprocess
-import time
 
 target_host = os.environ['TARGET_HOST']
 target_user = os.environ['TARGET_USER']
