@@ -25,7 +25,7 @@ def process_table_list(index, local_tables) :
             table_str = table_x.decode("utf-8") 
             table_str = table_str.strip()
             dump_table_list = dump_table_list + table_str + " "
-        dump_command = "mkdir -p {folder};export MYSQL_PWD={source_pass};mysqldump -h {source_host} -u {source_user} --no-tablespaces --single-transaction --skip-triggers --skip-lock-tables colbi_repo {dump_table_list}>> {folder}/colbi_repo_{index}.sql".format(source_host = source_host, source_user = source_user, source_pass = source_pass, folder = folder, index = index, dump_table_list = dump_table_list)
+        dump_command = "mkdir -p {folder};export MYSQL_PWD={source_pass};mysqldump -h {source_host} -u {source_user} --no-tablespaces --skip-triggers --skip-lock-tables colbi_repo {dump_table_list}>> {folder}/colbi_repo_{index}.sql".format(source_host = source_host, source_user = source_user, source_pass = source_pass, folder = folder, index = index, dump_table_list = dump_table_list)
         os.system(dump_command)
 
 start = time.time()
