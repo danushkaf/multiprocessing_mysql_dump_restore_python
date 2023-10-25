@@ -25,7 +25,7 @@ def process_table_list(index, local_tables) :
     os.system(drop_command)
 
 start = time.time()
-table_command = "export MYSQL_PWD={target_pass}; mysql -h {target_host} -u {target_user} -s -e \"select table_name from information_schema.tables where table_schema = 'colbi_repo'\"".format(target_host = target_host, target_user = target_user, target_pass = target_pass)
+table_command = "export MYSQL_PWD={target_pass}; mysql -h {target_host} -u {target_user} -s -e \"select table_name from information_schema.tables where table_schema = 'mydatabase'\"".format(target_host = target_host, target_user = target_user, target_pass = target_pass)
 
 
 os.system("rm -rf {folder};mkdir -p {folder}".format(folder = folder))
