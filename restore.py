@@ -10,7 +10,7 @@ folder = os.environ['FOLDER']
 no_of_subprocesses = int(os.environ['NO_OF_PROCESSES'])
 
 def process_table_list(index) : 
-    restore_command = "export MYSQL_PWD={target_pass};mysql -h {target_host} -u {target_user} colbi_repo < {folder}/colbi_repo_{index}.sql".format(target_host = target_host, target_user = target_user, target_pass = target_pass, folder = folder, index = index)
+    restore_command = "export MYSQL_PWD={target_pass};mysql -h {target_host} -u {target_user} mydatabase < {folder}/mydatabase_{index}.sql".format(target_host = target_host, target_user = target_user, target_pass = target_pass, folder = folder, index = index)
     os.system(restore_command)
 
 start = time.time()
